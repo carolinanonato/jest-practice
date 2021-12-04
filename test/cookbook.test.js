@@ -47,6 +47,18 @@ describe('Cookbook', () => {
   describe('Deleting a recipe', () => {
     test('should allow a recipe to be deleted', () => {
 
+      const myCookbook = new Cookbook;
+      myCookbook.addRecipe('reeses squares', ['peanut butter', 'chocolate chips', 'sugar', 'butter']);
+      myCookbook.addRecipe('nachos', ['tortilla chips', 'salsa', 'cheese', 'guacamole']);
+      myCookbook.addRecipe('tomato bruschetta', ['tomato', 'baguette', 'garlic', 'chesse', 'basil']);
+      myCookbook.addRecipe('cinnamon cake', ['flour', 'milk', 'sugar', 'cinammon', 'baking powder']);
+   
+      myCookbook.removeRecipe('nachos');
+      
+      const myRecipes = myCookbook.listRecipes();
+      expect(myRecipes).toEqual([ 'reeses squares', 'tomato bruschetta', 'cinnamon cake' ]
+      );
+
     });
   });
 });
