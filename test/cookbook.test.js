@@ -18,16 +18,21 @@ describe('Cookbook', () => {
 
   describe('Listing recipes', () => {
     test('should allow the recipes to be listed', () => {
- 
-        
+
+      const myCookbook = new Cookbook();
+      myCookbook.addRecipe('hotdog', ['meat', 'bread']);
+
+      const myRecipes = myCookbook.listRecipes();
+      expect(myRecipes).toEqual(['hotdog']);
+
+       
     });
   });
 
   describe('Retrieving a recipe', () => {
     test('should allow the ingredients for a recipe to be retrieved', () => {
       
-
-
+      
     });
   });
 

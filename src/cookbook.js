@@ -24,7 +24,7 @@ module.exports = { Cookbook };
 
 
 // *** Just a test to see the code working for my easy reference later 
-//const myCookbook = new Cookbook();
+// const myCookbook = new Cookbook();
 
 // console.log(`logging out the cookbook`)
 
