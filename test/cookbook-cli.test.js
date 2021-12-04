@@ -38,6 +38,14 @@ describe('CookbookCli', () => {
   describe('Retrieving a recipe', () => {
     test('should display the ingredients required to make the specified recipe', () => {
 
+      const myCookbook = new Cookbook();
+      const myCookbookCli = new CookbookCli(myCookbook);
+
+      myCookbookCli.add('strawberry shortcake', ['strawberry', 'flour', 'sugar', 'eggs', 'vanila'])
+
+      const message = myCookbookCli.get('strawberry shortcake');
+
+      expect(message).toEqual(`The ingredients for strawberry shortcake are: strawberry,flour,sugar,eggs,vanila`);
     
     });
   });
