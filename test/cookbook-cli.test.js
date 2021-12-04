@@ -20,12 +20,25 @@ describe('CookbookCli', () => {
   describe('Listing recipes', () => {
     test('should display the correct message listing all of the recipe names', () => {
 
+      const myCookbook = new Cookbook();
+      const myCookbookCli = new CookbookCli(myCookbook);
+
+      myCookbookCli.add('hotdog', ['meat', 'bread']);
+      myCookbookCli.add('chocolate brownies', ['flour', 'chocolate', 'butter']);
+
+      const message = myCookbookCli.list();
+
+      expect(message).toEqual(`You have the following recipes: hotdog,chocolate brownies`)
+
+    
+
     });
   });
 
   describe('Retrieving a recipe', () => {
     test('should display the ingredients required to make the specified recipe', () => {
 
+    
     });
   });
 
