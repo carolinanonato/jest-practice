@@ -32,6 +32,14 @@ describe('Cookbook', () => {
   describe('Retrieving a recipe', () => {
     test('should allow the ingredients for a recipe to be retrieved', () => {
       
+      const myCookbook = new Cookbook();
+      myCookbook.addRecipe('coxinha (brazilian croquette)', ['chicken', 'flour', 'panko breadcrumbs', 'cheese', 'love']);
+
+      const getRecipe = myCookbook.getRecipe('coxinha (brazilian croquette)');
+      expect(getRecipe).toEqual(['chicken', 'flour', 'panko breadcrumbs', 'cheese', 'love']);
+
+
+
       
     });
   });
