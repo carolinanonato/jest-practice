@@ -53,6 +53,15 @@ describe('CookbookCli', () => {
   describe('Deleting a recipe', () => {
     test('should accept the recipe name and display the correct message', () => {
 
+      const myCookbook = new Cookbook();
+      const myCookbookCli = new CookbookCli(myCookbook);
+
+      myCookbookCli.add('stuffed mushrooms', ['mushrooms', 'garlic', 'cream cheese', 'parmesan cheese', 'cayene pepper']);
+
+      const message = myCookbookCli.remove('stuffed mushrooms');
+
+      expect(message).toEqual(`Successfully removed the following recipe: stuffed mushrooms`);
+
     });
   });
 });
